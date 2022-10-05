@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa"
 import logo from "../img/logo.png"
 
-
 function Navbar() {
+    const navRef = useRef()
+
+    const showNavbar = () => {
+        navRef.current.classList.toggle("responsive_nav")
+    }
+
     return(
         <header>
-            <div className="navbar">
-                <img src={logo} alt="logo" className="logo" />
+            <img src={logo} alt="logo" className="logo" />
+            <nav className="navbar" ref={navRef}>
                 <h4><Link to="/" className="links">Inicio</Link></h4>
                 <div className="dropdown">
                     <button className="dropbtn">Alquileres</button>
@@ -28,7 +34,13 @@ function Navbar() {
                     </div>
                 </div>
                 <h4><Link to="/Login" className="links">Usuario</Link></h4>
-            </div>
+                <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+                    <FaTimes />
+                </button>
+            </nav>
+            <button className="nav-btn" onClick={showNavbar}>
+                <FaBars />
+            </button>
         </header>
     )
 }

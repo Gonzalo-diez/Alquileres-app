@@ -22,7 +22,7 @@ function ItemListContainer() {
                 return(
                     <div key={id} className="box-container">
                         <div className="box">
-                            <img src={imagen} alt={titulo} />
+                            <img src={imagen} alt={titulo} className="img-container" />
                             <div className="box-content">
                                 <h2>{titulo}</h2>
                                 <h3>{tipo}</h3>

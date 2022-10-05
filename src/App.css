@@ -1,6 +1,8 @@
 /*Menú*/
 header {
-    position: relative;
+    display: flex;
+	align-items: center;
+	justify-content: space-around;
     top: 0;
     left: 0;
     right: 0;
@@ -10,10 +12,21 @@ header {
     box-shadow: 0 .1rem .1rem rgba(0, 0, 0, 1);
 }
 
+header .nav-btn {
+	padding: 5px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: #eee;
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
+}
+
 .navbar {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
 }
 
 .logo {
@@ -64,7 +77,7 @@ header {
     display: block;
 }
 
-/*Inicio*/
+/*Inicio, sección de subtipo y sección de detalles*/
 
 .productos {
     margin-top: 3rem;
@@ -97,25 +110,7 @@ button, .links {
     text-decoration: none;
 }
 
-/*sección de detalles*/
-
-.detalle {
-    margin-top: 3rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-/*sección de subtipos*/
-
-.subtipo {
-    margin-top: 3rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-/*sección de login*/
+/*Sección de login*/
 
 .login {
     margin-top: 3rem;
@@ -157,7 +152,7 @@ button, .links {
     text-decoration: none;
 }
 
-/*seccion administradores*/
+/*Seccion administradores*/
 
 .add-form {
     display: flex;
@@ -200,7 +195,7 @@ button, .links {
     text-decoration: none;
 }
 
-/*sección eliminar publicación*/
+/*Sección eliminar publicación*/
 
 .borrar {
     display: flex;
@@ -215,12 +210,786 @@ button, .links {
     margin-top: 3rem;
 }
 
-/*footer*/
+/*Footer*/
 
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 2.5rem; 
     text-align: center;
+}
+
+/*Media queries*/
+/*Tablet*/
+
+@media only screen and (max-width: 768px) {
+     /*Responsive menú*/
+
+     .logo {
+        margin-left: .5%;
+        width: 5rem;
+    }
+
+	header .nav-btn {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	header .navbar {
+        z-index: 1000;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: #29335c;
+		transition: 1s;
+		transform: translateY(-1000vh);
+	}
+
+	header .responsive_nav {
+		transform: none;
+	}
+
+	.navbar .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+
+	.navbar h4 {
+		font-size: 1.5rem;
+	}
+
+    /*Inicio, sección de subtipo y sección de detalles*/ 
+
+    .productos {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .productos .box-container {
+        margin-left: 10%;
+        margin-top: 5%;
+        width: 80%;
+    }
+
+    .productos .box-container .img-container {
+        margin-top: 5%;
+        width: 40%;
+    }
+    
+    .productos .box-container .box {
+        border: .1rem solid rgba(0, 0, 0, 1);
+        border-radius: 1rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: white;
+        flex: 1 1 30rem;
+    }
+
+    /*Login*/
+
+    .login {
+        margin-top: 3rem;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: .1rem solid black;
+        border-radius: 1rem;
+    }
+    
+    .login h2 {
+        text-align: center;
+    }
+    
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .login-form label {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .login-form input {
+        text-align: center;
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 35px;
+    }
+    
+    .login-form button {
+        margin-left: 43.5%;
+        width: 10%;
+        border: none;
+        outline: none;
+        color: black;
+        background-color: white;
+        text-decoration: none;
+    }
+
+    /*Sección de adiministradores*/
+
+    .add-form {
+        display: flex;
+        flex-direction: column; 
+        margin-top: 2rem;
+    }
+    
+    .add-form label {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .add-form select {
+        text-align: center;
+        width: 15rem;
+        margin-left: 16.5rem;
+        margin-bottom: 5px; 
+    }
+    
+    .add-form input[type = text] {
+        text-align: center;
+        width: 15rem;
+        margin-left: 16.5rem;
+        margin-bottom: 10px;
+    }
+
+    .add-form input[type = file] {
+        text-align: center;
+        width: 15rem;
+        margin-left: 15rem;
+        margin-bottom: 10px;
+    }
+    
+    .add-form textarea {
+        width: 15rem;
+        height: 70px;
+        margin-left: 16.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .add-form .reset {
+        margin-left: 35rem;
+        width: 5rem;
+        border: none;
+        outline: none;
+        color: black;
+        background-color: white;
+        text-decoration: none;
+    }
+
+    /*Sección de borrado*/
+
+    .borrar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .borrar .delete-container {
+        border: .1rem solid black;
+        border-radius: .5rem;
+        width: 15rem;
+        text-align: center;
+        margin-top: 2rem;
+        margin-left: 20%;
+    }
+
+    /*Pie de página*/
+
+    footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem; 
+        text-align: center;
+    }
+}
+
+/*Celulares*/
+
+@media only screen and (max-width: 425px) {
+     /*Responsive menú*/
+
+     .logo {
+        margin-left: .5%;
+        width: 5rem;
+    }
+
+	header .nav-btn {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	header .navbar {
+        z-index: 1000;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: #29335c;
+		transition: 1s;
+		transform: translateY(-1000vh);
+	}
+
+	header .responsive_nav {
+		transform: none;
+	}
+
+	.navbar .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+
+	.navbar h4 {
+		font-size: 1.5rem;
+	}
+
+    /*Inicio, sección de subtipo y sección de detalles*/ 
+
+    .productos {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .productos .box-container {
+        margin-left: 10%;
+        margin-top: 5%;
+        width: 80%;
+    }
+
+    .productos .box-container .img-container {
+        margin-top: 5%;
+        width: 40%;
+    }
+    
+    .productos .box-container .box {
+        border: .1rem solid rgba(0, 0, 0, 1);
+        border-radius: 1rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: white;
+        flex: 1 1 30rem;
+    }
+
+    /*Login*/
+
+    .login {
+        margin-top: 3rem;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: .1rem solid black;
+        border-radius: 1rem;
+    }
+    
+    .login h2 {
+        text-align: center;
+    }
+    
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .login-form label {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .login-form input {
+        text-align: center;
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 35px;
+    }
+    
+    .login-form button {
+        margin-left: 37%;
+        width: 10%;
+        border: none;
+        outline: none;
+        color: black;
+        background-color: white;
+        text-decoration: none;
+    }
+
+    /*Sección de adiministradores*/
+
+    .add-form {
+        display: flex;
+        flex-direction: column; 
+        margin-top: 2rem;
+    }
+    
+    .add-form label {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .add-form select {
+        text-align: center;
+        width: 15rem;
+        margin-left: 5.5rem;
+        margin-bottom: 5px; 
+    }
+    
+    .add-form input[type = text] {
+        text-align: center;
+        width: 15rem;
+        margin-left: 5.5rem;
+        margin-bottom: 10px;
+    }
+
+    .add-form input[type = file] {
+        text-align: center;
+        width: 15rem;
+        margin-left: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .add-form textarea {
+        width: 15rem;
+        height: 70px;
+        margin-left: 5.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .add-form .reset {
+        margin-left: 120px;
+        width: 5rem;
+        border: none;
+        outline: none;
+        color: black;
+        background-color: white;
+        text-decoration: none;
+    }
+
+    /*Sección de borrado*/
+
+    .borrar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .borrar .delete-container {
+        border: .1rem solid black;
+        border-radius: .5rem;
+        width: 15rem;
+        text-align: center;
+        margin-top: 2rem;
+        margin-left: 20%;
+    }
+
+    /*Pie de página*/
+
+    footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem; 
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    /*Responsive menú*/
+
+    .logo {
+        margin-left: .5%;
+        width: 5rem;
+    }
+
+	header .nav-btn {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	header .navbar {
+        z-index: 1000;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: #29335c;
+		transition: 1s;
+		transform: translateY(-1000vh);
+	}
+
+	header .responsive_nav {
+		transform: none;
+	}
+
+	.navbar .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+
+	.navbar h4 {
+		font-size: 1.5rem;
+	}
+
+    /*Inicio, sección de subtipo y sección de detalles*/ 
+
+    .productos {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .productos .box-container {
+        margin-left: 10%;
+        margin-top: 5%;
+        width: 80%;
+    }
+
+    .productos .box-container .img-container {
+        margin-top: 5%;
+        width: 40%;
+    }
+    
+    .productos .box-container .box {
+        border: .1rem solid rgba(0, 0, 0, 1);
+        border-radius: 1rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: white;
+        flex: 1 1 30rem;
+    }
+
+    /*Login*/
+
+    .login {
+        margin-top: 3rem;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: .1rem solid black;
+        border-radius: 1rem;
+    }
+    
+    .login h2 {
+        text-align: center;
+    }
+    
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .login-form label {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .login-form input {
+        text-align: center;
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 35px;
+    }
+    
+    .login-form button {
+        margin-left: 37%;
+        width: 10%;
+        border: none;
+        outline: none;
+        color: black;
+        background-color: white;
+        text-decoration: none;
+    }
+
+    /*Sección de adiministradores*/
+
+    .add-form {
+        display: flex;
+        flex-direction: column; 
+        margin-top: 2rem;
+    }
+    
+    .add-form label {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .add-form select {
+        text-align: center;
+        width: 15rem;
+        margin-left: 4rem;
+        margin-bottom: 5px; 
+    }
+    
+    .add-form input[type = text] {
+        text-align: center;
+        width: 15rem;
+        margin-left: 4rem;
+        margin-bottom: 10px;
+    }
+
+    .add-form input[type = file] {
+        text-align: center;
+        width: 15rem;
+        margin-left: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .add-form textarea {
+        width: 15rem;
+        height: 70px;
+        margin-left: 4rem;
+        margin-bottom: 10px;
+    }
+    
+    .add-form .reset {
+        margin-left: 120px;
+        width: 5rem;
+        border: none;
+        outline: none;
+        color: black;
+        background-color: white;
+        text-decoration: none;
+    }
+
+    /*Sección de borrado*/
+
+    .borrar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .borrar .delete-container {
+        border: .1rem solid black;
+        border-radius: .5rem;
+        width: 15rem;
+        text-align: center;
+        margin-top: 2rem;
+        margin-left: 20%;
+    }
+
+    /*Pie de página*/
+
+    footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem; 
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    /*Responsive menú*/
+
+    .logo {
+        margin-left: .5%;
+        width: 5rem;
+    }
+
+	header .nav-btn {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	header .navbar {
+        z-index: 1000;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: #29335c;
+		transition: 1s;
+		transform: translateY(-1000vh);
+	}
+
+	header .responsive_nav {
+		transform: none;
+	}
+
+	.navbar .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+
+	.navbar h4 {
+		font-size: 1.5rem;
+	}
+
+    /*Inicio, sección de subtipo y sección de detalles*/ 
+
+    .productos {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .productos .box-container {
+        margin-left: 10%;
+        margin-top: 5%;
+        width: 80%;
+    }
+
+    .productos .box-container .img-container {
+        margin-top: 5%;
+        width: 40%;
+    }
+    
+    .productos .box-container .box {
+        border: .1rem solid rgba(0, 0, 0, 1);
+        border-radius: 1rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: white;
+        flex: 1 1 30rem;
+    }
+
+    /*Login*/
+
+    .login {
+        margin-top: 3rem;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: .1rem solid black;
+        border-radius: 1rem;
+    }
+    
+    .login h2 {
+        text-align: center;
+    }
+    
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .login-form label {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .login-form input {
+        text-align: center;
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 35px;
+    }
+    
+    .login-form button {
+        margin-left: 35%;
+        width: 10%;
+        border: none;
+        outline: none;
+        color: black;
+        background-color: white;
+        text-decoration: none;
+    }
+
+    /*Sección de adiministradores*/
+
+    .add-form {
+        display: flex;
+        flex-direction: column; 
+        margin-top: 2rem;
+    }
+    
+    .add-form label {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .add-form select {
+        text-align: center;
+        width: 15rem;
+        margin-left: 2rem;
+        margin-bottom: 5px; 
+    }
+    
+    .add-form input {
+        text-align: center;
+        width: 15rem;
+        margin-left: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .add-form textarea {
+        width: 15rem;
+        height: 70px;
+        margin-left: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .add-form .reset {
+        margin-left: 120px;
+        width: 5rem;
+        border: none;
+        outline: none;
+        color: black;
+        background-color: white;
+        text-decoration: none;
+    }
+
+    /*Sección de borrado*/
+
+    .borrar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .borrar .delete-container {
+        border: .1rem solid black;
+        border-radius: .5rem;
+        width: 15rem;
+        text-align: center;
+        margin-top: 2rem;
+        margin-left: 10%;
+    }
+
+    /*Pie de página*/
+
+    footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem; 
+        text-align: center;
+    }
 }

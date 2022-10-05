@@ -22,14 +22,16 @@ function VentaCasa() {
     }, [])
 
     return(
-        <section>
+        <section className="productos">
             {data.map((elemento, indice) => {
                 return(
-                    <div key={indice}>
-                        <img src={elemento.imagen} alt={elemento.titulo} />
-                        <div>
-                            <h3>{elemento.titulo}</h3>
-                            <button><Link to={`/Item/${elemento.id}`} className="links">Saber más</Link></button>
+                    <div key={indice} className="box-container">
+                        <div className="box">
+                            <img src={elemento.imagen} alt={elemento.titulo} className="img-container" />
+                            <div className="box-content">
+                                <h3>{elemento.titulo}</h3>
+                                <button><Link to={`/Item/${elemento.id}`} className="links">Saber más</Link></button>
+                            </div>
                         </div>
                     </div>
                 )
