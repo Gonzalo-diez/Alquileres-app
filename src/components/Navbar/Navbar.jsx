@@ -14,7 +14,7 @@ function Navbar() {
         <header>
             <img src={logo} alt="logo" className="logo" />
             <nav className="navbar" ref={navRef}>
-                <h4><Link to="/" className="links">Inicio</Link></h4>
+                <h4><Link to="/" className="menu-links">Inicio</Link></h4>
                 <div className="dropdown">
                     <button className="dropbtn">Alquileres</button>
                     <div className="dropdown-content">
@@ -33,7 +33,7 @@ function Navbar() {
                         <h4><Link to="/Ventas/Bodega" className="dropitem">Galpon/Bodega</Link></h4>
                     </div>
                 </div>
-                <h4><Link to="/Login" className="links">Usuario</Link></h4>
+                <h4><Link to="/Login" className="menu-links">Usuario</Link></h4>
                 <button className="nav-btn nav-close-btn" onClick={showNavbar}>
                     <FaTimes />
                 </button>
