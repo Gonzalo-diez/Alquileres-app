@@ -218,6 +218,14 @@ button, .links {
     margin-top: 3rem;
 }
 
+.borrar .delete-container .btn-delete {
+    border: none;
+    outline: none;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+}
+
 /*Footer*/
 
 footer {
@@ -341,16 +349,6 @@ footer {
         margin-top: 5%;
         width: 40%;
     }
-    
-    .productos .box-container .box {
-        border: .1rem solid rgba(0, 0, 0, 1);
-        border-radius: 1rem;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        background: white;
-        flex: 1 1 30rem;
-    }
 
     /*Login*/
 
@@ -358,27 +356,9 @@ footer {
         margin-top: 3rem;
         margin-left: 10%;
         margin-right: 10%;
-        border: .1rem solid black;
-        border-radius: 1rem;
-    }
-    
-    .login h2 {
-        text-align: center;
-    }
-    
-    .login-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    
-    .login-form label {
-        text-align: center;
-        margin-bottom: 1rem;
     }
     
     .login-form input {
-        text-align: center;
         width: 80%;
         margin-left: 10%;
         margin-bottom: 35px;
@@ -387,42 +367,31 @@ footer {
     .login-form button {
         margin-left: 43.5%;
         width: 10%;
-        border: none;
-        outline: none;
-        color: black;
-        background-color: white;
-        text-decoration: none;
     }
 
     /*Sección de adiministradores*/
 
     .add-form {
-        display: flex;
-        flex-direction: column; 
         margin-top: 2rem;
     }
     
     .add-form label {
-        text-align: center;
         margin-bottom: 1rem;
     }
     
     .add-form select {
-        text-align: center;
         width: 15rem;
         margin-left: 16.5rem;
         margin-bottom: 5px; 
     }
     
     .add-form input[type = text] {
-        text-align: center;
         width: 15rem;
         margin-left: 16.5rem;
         margin-bottom: 10px;
     }
 
     .add-form input[type = file] {
-        text-align: center;
         width: 15rem;
         margin-left: 15rem;
         margin-bottom: 10px;
@@ -438,18 +407,13 @@ footer {
     .add-form .reset {
         margin-left: 35rem;
         width: 5rem;
-        border: none;
-        outline: none;
-        color: black;
-        background-color: white;
-        text-decoration: none;
     }
 
     /*Sección de borrado*/
 
     .borrar {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
     }
     
@@ -459,7 +423,11 @@ footer {
         width: 15rem;
         text-align: center;
         margin-top: 2rem;
-        margin-left: 20%;
+        margin-left: 3%;
+    }
+
+    .borrar .delete-container .btn-delete {
+        margin-bottom: 1rem;
     }
 
     /*Pie de página*/
@@ -478,7 +446,7 @@ footer {
 @media only screen and (max-width: 425px) {
      /*Responsive menú*/
 
-     .logo {
+    .logo {
         margin-left: .5%;
         width: 5rem;
     }
@@ -585,16 +553,6 @@ footer {
         margin-top: 5%;
         width: 40%;
     }
-    
-    .productos .box-container .box {
-        border: .1rem solid rgba(0, 0, 0, 1);
-        border-radius: 1rem;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        background: white;
-        flex: 1 1 30rem;
-    }
 
     /*Login*/
 
@@ -602,12 +560,6 @@ footer {
         margin-top: 3rem;
         margin-left: 10%;
         margin-right: 10%;
-        border: .1rem solid black;
-        border-radius: 1rem;
-    }
-    
-    .login h2 {
-        text-align: center;
     }
     
     .login-form {
@@ -617,56 +569,43 @@ footer {
     }
     
     .login-form label {
-        text-align: center;
         margin-bottom: 1rem;
     }
     
     .login-form input {
-        text-align: center;
         width: 80%;
         margin-left: 10%;
         margin-bottom: 35px;
     }
     
     .login-form button {
-        margin-left: 37%;
+        margin-left: 40%;
         width: 10%;
-        border: none;
-        outline: none;
-        color: black;
-        background-color: white;
-        text-decoration: none;
     }
 
     /*Sección de adiministradores*/
 
     .add-form {
-        display: flex;
-        flex-direction: column; 
         margin-top: 2rem;
     }
     
     .add-form label {
-        text-align: center;
         margin-bottom: 1rem;
     }
     
     .add-form select {
-        text-align: center;
         width: 15rem;
         margin-left: 5.5rem;
         margin-bottom: 5px; 
     }
     
     .add-form input[type = text] {
-        text-align: center;
         width: 15rem;
         margin-left: 5.5rem;
         margin-bottom: 10px;
     }
 
     .add-form input[type = file] {
-        text-align: center;
         width: 15rem;
         margin-left: 1rem;
         margin-bottom: 10px;
@@ -682,11 +621,6 @@ footer {
     .add-form .reset {
         margin-left: 120px;
         width: 5rem;
-        border: none;
-        outline: none;
-        color: black;
-        background-color: white;
-        text-decoration: none;
     }
 
     /*Sección de borrado*/
@@ -698,10 +632,7 @@ footer {
     }
     
     .borrar .delete-container {
-        border: .1rem solid black;
-        border-radius: .5rem;
         width: 15rem;
-        text-align: center;
         margin-top: 2rem;
         margin-left: 20%;
     }
@@ -725,97 +656,7 @@ footer {
         width: 5rem;
     }
 
-	header .nav-btn {
-		visibility: visible;
-		opacity: 1;
-	}
-
-	header .navbar {
-        z-index: 1000;
-		position: fixed;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 1.5rem;
-		background-color: #29335c;
-		transition: 1s;
-		transform: translateY(-1000vh);
-	}
-
-	header .responsive_nav {
-		transform: none;
-	}
-
-	.navbar .nav-close-btn {
-		position: absolute;
-		top: 2rem;
-		right: 2rem;
-	}
-
-	.navbar .menu-links {
-		font-size: 1rem;
-        background-color: #29335c;
-        color: white;
-	}
-
-    .dropbtn {
-        display: inline-block;
-        color: white;
-        background-color: #29335c;
-        text-align: center;
-        font-size: .9rem;
-        font-weight: bolder;
-        padding: 14px 16px;
-        text-decoration: none;
-        margin-top: 12px;
-    }
-      
-    .dropbtn:hover, .dropdown:hover .dropbtn {
-        background-color: #29335c;
-    }
-      
-    .dropdown {
-        display: inline-block;
-    }
-      
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #29335c;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-    }
-      
-    .dropdown-content .dropitem {
-        color: white;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-        font-size: .9rem;
-    }
-      
-    .dropdown-content button:hover {
-        background-color: #f1f1f1;
-    }
-      
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
     /*Inicio, sección de subtipo y sección de detalles*/ 
-
-    .productos {
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: column;
-    }
     
     .productos .box-container {
         margin-left: 10%;
@@ -827,15 +668,122 @@ footer {
         margin-top: 5%;
         width: 40%;
     }
-    
-    .productos .box-container .box {
-        border: .1rem solid rgba(0, 0, 0, 1);
+
+    /*Login*/
+
+    .login {
+        margin-top: 3rem;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: .1rem solid black;
         border-radius: 1rem;
+    }
+    
+    .login h2 {
         text-align: center;
+    }
+    
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .login-form label {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .login-form input {
+        text-align: center;
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 35px;
+    }
+    
+    .login-form button {
+        margin-left: 38%;
+        width: 10%;
+    }
+
+    /*Sección de adiministradores*/
+
+    .add-form {
+        margin-top: 2rem;
+    }
+    
+    .add-form label {
+        margin-bottom: 1rem;
+    }
+    
+    .add-form select {
+        width: 15rem;
+        margin-left: 4rem;
+        margin-bottom: 5px; 
+    }
+    
+    .add-form input[type = text] {
+        width: 15rem;
+        margin-left: 4rem;
+        margin-bottom: 10px;
+    }
+
+    .add-form input[type = file] {
+        width: 15rem;
+        margin-left: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .add-form textarea {
+        width: 15rem;
+        height: 70px;
+        margin-left: 4rem;
+        margin-bottom: 10px;
+    }
+    
+    .add-form .reset {
+        margin-left: 120px;
+        width: 5rem;
+    }
+
+    /*Sección de borrado*/
+    
+    .borrar .delete-container {
+        width: 15rem;
+        margin-top: 2rem;
+        margin-left: 20%;
+    }
+
+    /*Pie de página*/
+
+    footer {
         position: relative;
-        overflow: hidden;
-        background: white;
-        flex: 1 1 30rem;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem; 
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    /*Responsive menú*/
+
+    .logo {
+        margin-left: .5%;
+        width: 5rem;
+    }
+
+    /*Inicio, sección de subtipo y sección de detalles*/ 
+    
+    .productos .box-container {
+        margin-left: 10%;
+        margin-top: 5%;
+        width: 80%;
+    }
+
+    .productos .box-container .img-container {
+        margin-top: 5%;
+        width: 40%;
     }
 
     /*Login*/
@@ -873,11 +821,6 @@ footer {
     .login-form button {
         margin-left: 37%;
         width: 10%;
-        border: none;
-        outline: none;
-        color: black;
-        background-color: white;
-        text-decoration: none;
     }
 
     /*Sección de adiministradores*/
@@ -889,263 +832,24 @@ footer {
     }
     
     .add-form label {
-        text-align: center;
         margin-bottom: 1rem;
     }
     
     .add-form select {
-        text-align: center;
         width: 15rem;
-        margin-left: 4rem;
+        margin-left: 2rem;
         margin-bottom: 5px; 
     }
     
     .add-form input[type = text] {
-        text-align: center;
         width: 15rem;
-        margin-left: 4rem;
+        margin-left: 1.8rem;
         margin-bottom: 10px;
     }
 
     .add-form input[type = file] {
-        text-align: center;
         width: 15rem;
-        margin-left: 1rem;
-        margin-bottom: 10px;
-    }
-    
-    .add-form textarea {
-        width: 15rem;
-        height: 70px;
-        margin-left: 4rem;
-        margin-bottom: 10px;
-    }
-    
-    .add-form .reset {
-        margin-left: 120px;
-        width: 5rem;
-        border: none;
-        outline: none;
-        color: black;
-        background-color: white;
-        text-decoration: none;
-    }
-
-    /*Sección de borrado*/
-
-    .borrar {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    
-    .borrar .delete-container {
-        border: .1rem solid black;
-        border-radius: .5rem;
-        width: 15rem;
-        text-align: center;
-        margin-top: 2rem;
-        margin-left: 20%;
-    }
-
-    /*Pie de página*/
-
-    footer {
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        height: 2.5rem; 
-        text-align: center;
-    }
-}
-
-@media only screen and (max-width: 320px) {
-    /*Responsive menú*/
-
-    .logo {
-        margin-left: .5%;
-        width: 5rem;
-    }
-
-	header .nav-btn {
-		visibility: visible;
-		opacity: 1;
-	}
-
-	header .navbar {
-        z-index: 1000;
-		position: fixed;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 1.5rem;
-		background-color: #29335c;
-		transition: 1s;
-		transform: translateY(-1000vh);
-	}
-
-	header .responsive_nav {
-		transform: none;
-	}
-
-	.navbar .nav-close-btn {
-		position: absolute;
-		top: 2rem;
-		right: 2rem;
-	}
-
-	.navbar .menu-links {
-		font-size: 1rem;
-        background-color: #29335c;
-        color: white;
-	}
-
-    .dropbtn {
-        display: inline-block;
-        color: white;
-        background-color: #29335c;
-        text-align: center;
-        font-size: .9rem;
-        font-weight: bolder;
-        padding: 14px 16px;
-        text-decoration: none;
-        margin-top: 12px;
-    }
-      
-    .dropbtn:hover, .dropdown:hover .dropbtn {
-        background-color: #29335c;
-    }
-      
-    .dropdown {
-        display: inline-block;
-    }
-      
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #29335c;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-    }
-      
-    .dropdown-content .dropitem {
-        color: white;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-        font-size: .9rem;
-    }
-      
-    .dropdown-content button:hover {
-        background-color: #f1f1f1;
-    }
-      
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    /*Inicio, sección de subtipo y sección de detalles*/ 
-
-    .productos {
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .productos .box-container {
-        margin-left: 10%;
-        margin-top: 5%;
-        width: 80%;
-    }
-
-    .productos .box-container .img-container {
-        margin-top: 5%;
-        width: 40%;
-    }
-    
-    .productos .box-container .box {
-        border: .1rem solid rgba(0, 0, 0, 1);
-        border-radius: 1rem;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        background: white;
-        flex: 1 1 30rem;
-    }
-
-    /*Login*/
-
-    .login {
-        margin-top: 3rem;
-        margin-left: 10%;
-        margin-right: 10%;
-        border: .1rem solid black;
-        border-radius: 1rem;
-    }
-    
-    .login h2 {
-        text-align: center;
-    }
-    
-    .login-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    
-    .login-form label {
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-    
-    .login-form input {
-        text-align: center;
-        width: 80%;
-        margin-left: 10%;
-        margin-bottom: 35px;
-    }
-    
-    .login-form button {
-        margin-left: 35%;
-        width: 10%;
-        border: none;
-        outline: none;
-        color: black;
-        background-color: white;
-        text-decoration: none;
-    }
-
-    /*Sección de adiministradores*/
-
-    .add-form {
-        display: flex;
-        flex-direction: column; 
-        margin-top: 2rem;
-    }
-    
-    .add-form label {
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-    
-    .add-form select {
-        text-align: center;
-        width: 15rem;
-        margin-left: 2rem;
-        margin-bottom: 5px; 
-    }
-    
-    .add-form input {
-        text-align: center;
-        width: 15rem;
-        margin-left: 2rem;
+        margin-left: 0.5rem;
         margin-bottom: 10px;
     }
     
@@ -1159,28 +863,14 @@ footer {
     .add-form .reset {
         margin-left: 120px;
         width: 5rem;
-        border: none;
-        outline: none;
-        color: black;
-        background-color: white;
-        text-decoration: none;
     }
 
     /*Sección de borrado*/
-
-    .borrar {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
     
     .borrar .delete-container {
-        border: .1rem solid black;
-        border-radius: .5rem;
         width: 15rem;
-        text-align: center;
         margin-top: 2rem;
-        margin-left: 10%;
+        margin-left: 12.5%;
     }
 
     /*Pie de página*/

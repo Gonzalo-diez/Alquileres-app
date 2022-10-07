@@ -31,7 +31,7 @@ function DeleteData() {
                         <div className="delete">
                             <h3>{titulo}</h3>
                             <h3>{tipo}: {subtipo}</h3>
-                            <button onClick={() => handleDelete(id)}>Borrar</button>
+                            <button onClick={() => handleDelete(id)} className="btn-delete">Borrar</button>
                         </div>
                     </div>
                 )
