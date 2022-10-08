@@ -15,6 +15,7 @@ import VentaDepto from "./components/Ventas/VentaDepto";
 import VentaLocal from "./components/Ventas/VentaLocal";
 import VentaBodega from "./components/Ventas/VentaBodega";
 import PublicacionContainer from "./components/Detail/PublicacionContainer";
+import ErrorPage from "./components/Error/Error";
 import { AuthContextProvider } from "./components/Context/AuthContext";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
             <Route path="/Item/:id" element={<PublicacionContainer />} />
             <Route path="/User" element={<Admin />} />
             <Route path="/Login" element={<Login />} />
+            <Route path="/*" element={<ErrorPage />} />
           </Routes>
           <Footer />
         </AuthContextProvider>

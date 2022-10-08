@@ -26,7 +26,10 @@ header .nav-btn {
 
 .navbar {
     display: flex;
+    justify-content: space-around;
     flex-direction: row;
+    flex: 1;
+    margin-left: 10rem;
 }
 
 .navbar .menu-links {
@@ -248,13 +251,15 @@ footer {
     }
 
 	header .nav-btn {
+        color: black;
 		visibility: visible;
 		opacity: 1;
 	}
 
-	header .navbar {
+    header .navbar {
         z-index: 1000;
 		position: fixed;
+        margin-left: 0;
 		top: 0;
 		left: 0;
 		height: 100%;
