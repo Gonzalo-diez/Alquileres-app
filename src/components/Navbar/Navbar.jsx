@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa"
+import { FaBars, FaTimes, FaUserAlt } from "react-icons/fa"
 import logo from "../img/logo.png"
 
 function Navbar() {
@@ -33,7 +33,6 @@ function Navbar() {
                         <h4><Link to="/Ventas/Bodega" className="dropitem">Galpon/Bodega</Link></h4>
                     </div>
                 </div>
-                <h4><Link to="/Login" className="menu-links">Usuario</Link></h4>
                 <button className="nav-btn nav-close-btn" onClick={showNavbar}>
                     <FaTimes />
                 </button>
@@ -41,6 +40,7 @@ function Navbar() {
             <button className="nav-btn" onClick={showNavbar}>
                 <FaBars />
             </button>
+            <button><Link to="/Login" className="menu-links links"><FaUserAlt /></Link></button>
         </header>
     )
 }
