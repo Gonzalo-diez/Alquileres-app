@@ -96,7 +96,7 @@ header .nav-btn {
     text-decoration: none;
 }
 
-/*Inicio, sección de subtipo y sección de detalles*/
+/*Inicio y sección de subtipo*/
 
 .productos {
     margin-top: 3rem;
@@ -110,6 +110,12 @@ header .nav-btn {
     width: 30%;
 }
 
+.productos .box-container .img-container {
+    margin-top: 10px;
+    width: 70%;
+    height: 200px;
+}
+
 .productos .box-container .box {
     border: .1rem solid rgba(0, 0, 0, 1);
     border-radius: 1rem;
@@ -120,6 +126,8 @@ header .nav-btn {
     flex: 1 1 30rem;
 }
 
+/*Sección de detalles*/
+
 .detalles {
     margin-top: 3rem;
     display: flex;
@@ -129,12 +137,10 @@ header .nav-btn {
 }
 
 .detalles .detail-container {
-    width: 30%;
+    width: 45%;
 }
 
 .detalles .detail-container .detail {
-    border: .1rem solid rgba(0, 0, 0, 1);
-    border-radius: 1rem;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -149,53 +155,14 @@ header .nav-btn {
 }
 
 .carousel-container .img-carousel {
-    width: 20rem;
+    width: 5rem;
 }
 
-.carousel-container .myCard {
-    margin: 10px;
-    color: white;
-}
-
-.product-container {
-    padding: 0 10px;
+.detalles .detail-container .detail .detail-container {
     display: flex;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    flex-direction: column;
 }
 
-.pre-btn,
-.next-btn {
-    border: none;
-    width: 60px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.pre-btn {
-    left: 0;
-}
-
-.next-btn {
-    right: 0;
-}
-
-.next-btn p,
-.pre-btn p {
-    font-size: 50px;
-    background-color: rgba(255, 255, 255, 0.436);
-    box-shadow: 0px 0px 10px 1px black;
-    border-radius: 10px;
-    color: rgb(0, 0, 0);
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-}
 
 /*Links*/
 
