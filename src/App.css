@@ -1,3 +1,10 @@
+/*Body*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 /*Menú*/
 header {
     display: flex;
@@ -53,6 +60,7 @@ header .nav-btn {
     padding: 14px 16px;
     text-decoration: none;
     margin-top: 12px;
+    font-weight: bold;
 }
   
 .dropbtn:hover, .dropdown:hover .dropbtn {
@@ -111,19 +119,22 @@ header .nav-btn {
 }
 
 .productos .box-container .img-container {
-    margin-top: 10px;
-    width: 70%;
-    height: 200px;
+    width: 100%;
+    height: 300px;
 }
 
 .productos .box-container .box {
-    border: .1rem solid rgba(0, 0, 0, 1);
-    border-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
     text-align: center;
     position: relative;
     overflow: hidden;
     background: white;
     flex: 1 1 30rem;
+}
+
+.productos .box-container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 /*Sección de detalles*/
@@ -163,7 +174,6 @@ header .nav-btn {
     flex-direction: column;
 }
 
-
 /*Links*/
 
 button, .links {
@@ -172,6 +182,7 @@ button, .links {
     color: black;
     background-color: white;
     text-decoration: none;
+    font-weight: bold;
 }
 
 /*Sección de login*/
@@ -286,7 +297,7 @@ button, .links {
 
 footer {
     position: relative;
-    bottom: 0;
+    margin-top: 5rem;
     width: 100%;
     height: 2.5rem; 
     text-align: center;
@@ -389,7 +400,7 @@ footer {
         display: block;
     }
 
-    /*Inicio, sección de subtipo y sección de detalles*/ 
+    /*Inicio y sección de subtipo*/ 
 
     .productos {
         margin-top: 1rem;
@@ -405,7 +416,21 @@ footer {
 
     .productos .box-container .img-container {
         margin-top: 5%;
-        width: 40%;
+        width: 100%;
+    }
+
+    /*Sección de detalles*/
+
+    .detalles {
+        margin-top: 3rem;
+    }
+
+    .detalles .detail-container {
+        width: 55%;
+    }
+
+    .carousel-container .img-carousel {
+        width: 100%;
     }
 
     /*Login*/
@@ -593,7 +618,7 @@ footer {
         display: block;
     }
 
-    /*Inicio, sección de subtipo y sección de detalles*/ 
+    /*Inicio y sección de subtipo*/ 
 
     .productos {
         margin-top: 1rem;
@@ -609,7 +634,17 @@ footer {
 
     .productos .box-container .img-container {
         margin-top: 5%;
-        width: 40%;
+        width: 100%;
+    }
+
+    /*Sección de detalles*/
+
+    .detalles {
+        margin-top: 3rem;
+    }
+
+    .detalles .detail-container {
+        width: 60%;
     }
 
     /*Login*/
@@ -714,7 +749,7 @@ footer {
         width: 5rem;
     }
 
-    /*Inicio, sección de subtipo y sección de detalles*/ 
+    /*Inicio y sección de subtipo*/ 
     
     .productos .box-container {
         margin-left: 10%;
@@ -724,7 +759,17 @@ footer {
 
     .productos .box-container .img-container {
         margin-top: 5%;
-        width: 40%;
+        width: 100%;
+    }
+
+    /*Sección de detalles*/
+
+    .detalles {
+        margin-top: 3rem;
+    }
+
+    .detalles .detail-container {
+        width: 70%;
     }
 
     /*Login*/
@@ -831,7 +876,7 @@ footer {
         width: 5rem;
     }
 
-    /*Inicio, sección de subtipo y sección de detalles*/ 
+    /*Inicio y sección de subtipo*/ 
     
     .productos .box-container {
         margin-left: 10%;
@@ -841,7 +886,7 @@ footer {
 
     .productos .box-container .img-container {
         margin-top: 5%;
-        width: 40%;
+        width: 100%;
     }
 
     /*Login*/
