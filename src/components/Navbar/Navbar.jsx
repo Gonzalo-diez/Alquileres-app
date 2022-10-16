@@ -12,7 +12,7 @@ function Navbar() {
 
     return(
         <header>
-            <img src={logo} alt="logo" className="logo" />
+            <Link to="/" className="logo-container"><img src={logo} alt="logo" className="logo" /></Link>
             <nav className="navbar" ref={navRef}>
                 <h4><Link to="/" className="menu-links">Inicio</Link></h4>
                 <div className="dropdown">

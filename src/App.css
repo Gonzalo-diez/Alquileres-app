@@ -36,7 +36,7 @@ header .nav-btn {
     justify-content: space-around;
     flex-direction: row;
     flex: 1;
-    margin-left: 10rem;
+    margin-left: 0;
 }
 
 .navbar .menu-links {
@@ -47,9 +47,8 @@ header .nav-btn {
     text-decoration: none;
 }
 
-.logo {
-    width: 8%;
-    margin-left: -5rem;
+.logo-container, .logo {
+    width: 30%;
 }
 
 .dropbtn {
