@@ -17,6 +17,7 @@ import VentaBodega from "./components/Ventas/VentaBodega";
 import PublicacionContainer from "./components/Detail/PublicacionContainer";
 import ErrorPage from "./components/Error/Error";
 import { AuthContextProvider } from "./components/Context/AuthContext";
+import ProtectedRoute from "./components/Protected Route/ProtectedRoute";
 
 function App() {
   return (
@@ -35,7 +36,14 @@ function App() {
             <Route path="/Ventas/Local" element={<VentaLocal />} />
             <Route path="/Ventas/Bodega" element={<VentaBodega />} />
             <Route path="/Item/:id" element={<PublicacionContainer />} />
-            <Route path="/User" element={<Admin />} />
+            <Route 
+              path="/User" 
+              element={
+                <ProtectedRoute>
+                  <Admin />
+                </ProtectedRoute>
+              } 
+            />
             <Route path="/Login" element={<Login />} />
             <Route path="/*" element={<ErrorPage />} />
           </Routes>
