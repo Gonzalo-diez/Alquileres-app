@@ -24,10 +24,10 @@ function DeleteData() {
 
     return(
         <section className="borrar">
-            {data.map((item) => {
+            {data.map((item, indice) => {
                 const { tipo, subtipo, titulo, id } = item
                 return(
-                    <div key={id} className="delete-container">
+                    <div key={indice} className="delete-container">
                         <div className="delete">
                             <h3>{titulo}</h3>
                             <h3>{tipo}: {subtipo}</h3>
