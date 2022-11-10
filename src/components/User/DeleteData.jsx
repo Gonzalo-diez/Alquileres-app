@@ -25,13 +25,16 @@ function DeleteData() {
     return(
         <section className="borrar">
             {data.map((item, indice) => {
-                const { tipo, subtipo, titulo, id } = item
+                const { tipo, subtipo, titulo, id, imagen } = item
                 return(
                     <div key={indice} className="delete-container">
                         <div className="delete">
-                            <h3>{titulo}</h3>
-                            <h3>{tipo}: {subtipo}</h3>
-                            <button onClick={() => handleDelete(id)} className="btn-delete">Borrar</button>
+                            <img src={imagen} alt={tipo} className="img-delete" />
+                            <div className="delete-content">
+                                <h3>{titulo}</h3>
+                                <h3>{tipo}: {subtipo}</h3>
+                                <button onClick={() => handleDelete(id)} className="btn-delete">Borrar</button>
+                            </div>
                         </div>
                     </div>
                 )

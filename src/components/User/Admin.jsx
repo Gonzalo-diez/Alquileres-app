@@ -5,6 +5,8 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 import { useNavigate } from "react-router-dom";
 import DeleteData from "./DeleteData";
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 function Admin() {
     const { logOut } = UserAuth();
@@ -43,7 +45,9 @@ function Admin() {
                 "state_changed",
                 (snapshot) => {
                     const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    console.log('Upload is ' + progress + '% done');
+                    toast.info('Upload is ' + progress + '% done', {
+                        position: toast.POSITION.TOP_CENTER
+                    });
                     setPerc(progress);
                     switch (snapshot.state) {
                     case 'paused':
@@ -80,7 +84,9 @@ function Admin() {
                 "state_changed",
                 (snapshot) => {
                     const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    console.log('Upload is ' + progress + '% done');
+                    toast.info('Upload is ' + progress + '% done', {
+                        position: toast.POSITION.TOP_CENTER
+                    });
                     setPerc(progress);
                     switch (snapshot.state) {
                     case 'paused':
@@ -117,7 +123,9 @@ function Admin() {
                 "state_changed",
                 (snapshot) => {
                     const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    console.log('Upload is ' + progress + '% done');
+                    toast.info('Upload is ' + progress + '% done', {
+                        position: toast.POSITION.TOP_CENTER
+                    });
                     setPerc(progress);
                     switch (snapshot.state) {
                     case 'paused':
@@ -154,7 +162,9 @@ function Admin() {
                 "state_changed",
                 (snapshot) => {
                     const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    console.log('Upload is ' + progress + '% done');
+                    toast.info('Upload is ' + progress + '% done', {
+                        position: toast.POSITION.TOP_CENTER
+                    });
                     setPerc(progress);
                     switch (snapshot.state) {
                     case 'paused':
@@ -191,7 +201,9 @@ function Admin() {
                 "state_changed",
                 (snapshot) => {
                     const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    console.log('Upload is ' + progress + '% done');
+                    toast.info('Upload is ' + progress + '% done', {
+                        position: toast.POSITION.TOP_CENTER
+                    });
                     setPerc(progress);
                     switch (snapshot.state) {
                     case 'paused':
@@ -231,7 +243,9 @@ function Admin() {
             ...data,
             timeStamp: serverTimestamp(),
         }).then(() => {
-            alert("Datos subidos");
+            toast.success("Datos subidos", {
+                position: toast.POSITION.TOP_CENTER
+            });
         }).catch((err) => {
             console.log(err)
         })
@@ -272,6 +286,7 @@ function Admin() {
                     <input type="reset" className="reset" />
                     <button onClick={deleteTable}>Quiere eliminar una publicación?</button>
                 </form>
+                <ToastContainer />
             </section>
         )
     }

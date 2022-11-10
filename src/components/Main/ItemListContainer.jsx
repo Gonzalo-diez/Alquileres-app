@@ -18,7 +18,7 @@ function ItemListContainer() {
     return(
         <section className="productos">
             {items.map((item, indice) => {
-                const {imagen, titulo, id, tipo, subtipo} = item
+                const {imagen, titulo, id, tipo, subtipo} = item;
                 return(
                     <div key={indice} className="box-container">
                         <div className="box">

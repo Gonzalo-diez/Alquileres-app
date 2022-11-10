@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../Context/AuthContext";
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
     const emailRef = useRef()
@@ -17,7 +19,9 @@ function Login() {
           navigate('/User')
         } catch (e) {
           setError(e.message, error)
-          console.log(e.message)
+          toast.warn("Esta cuenta no existe, solo administradores!", {
+            position: toast.POSITION.TOP_CENTER
+          })
         }
     };
 
@@ -31,6 +35,7 @@ function Login() {
               <input ref={passwordRef} type="password" placeholder="Ingrese la contraseña..." />
               <button>Continuar</button>
             </form>
+            <ToastContainer />
         </section>
     )
 }

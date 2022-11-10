@@ -24,13 +24,14 @@ function AlquilerLocal() {
     return(
         <section className="productos">
             {data.map((elemento, indice) => {
+                const {imagen, titulo, id} = elemento;
                 return(
                     <div key={indice} className="box-container">
                         <div className="box">
-                            <img src={elemento.imagen} alt={elemento.titulo} className="img-container" />
+                            <img src={imagen} alt={titulo} className="img-container" />
                             <div className="box-content">
-                                <h3>{elemento.titulo}</h3>
-                                <button><Link to={`/Item/${elemento.id}`} className="links">Saber más</Link></button>
+                                <h3>{titulo}</h3>
+                                <button><Link to={`/Item/${id}`} className="links">Saber más</Link></button>
                             </div>
                         </div>
                     </div>
