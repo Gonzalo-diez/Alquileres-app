@@ -1,3 +1,8 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 /*Menú*/
 header {
     display: flex;
@@ -863,11 +868,6 @@ footer {
 
 @media only screen and (max-width: 320px) {
     /*Responsive menú*/
-
-    header {
-        width: 100%;
-    }
-
     .logo {
         margin-left: .5%;
         width: 5rem;
