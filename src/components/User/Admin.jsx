@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { db, storage } from "../db/Firebase";
 import { UserAuth } from "../Context/AuthContext";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore"
+import { set, ref as load } from "firebase/database";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 import { useNavigate } from "react-router-dom";
 import DeleteData from "./DeleteData";
@@ -239,9 +239,8 @@ function Admin() {
 
     const handleAdd = async (e) => {
         e.preventDefault();
-        addDoc(collection(db, "publicaciones"), {
+        set(load(db, "publicaciones"), {
             ...data,
-            timeStamp: serverTimestamp(),
         }).then(() => {
             toast.success("Datos subidos", {
                 position: toast.POSITION.TOP_CENTER

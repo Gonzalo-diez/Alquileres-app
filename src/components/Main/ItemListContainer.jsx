@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../db/Firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { ref, get, child } from "firebase/database";
 import { Link, useNavigate } from "react-router-dom";
 
 function ItemListContainer() {
@@ -9,7 +9,7 @@ function ItemListContainer() {
 
     useEffect(() => {
         const getData = async() => {
-            const data = await getDocs(collection(db, "publicaciones"))
+            const data = get(child(ref(db, "publicaciones")))
             setItem(data.docs.map((doc) => ({ ...doc.data(), id: doc.id})))
         }
 

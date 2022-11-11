@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../db/Firebase";
-import { getDocs, collection, where, query } from "firebase/firestore";
+import { ref } from "firebase/database";
 import { Link, useNavigate } from "react-router-dom";
 
 function VentaDepto() {
@@ -8,11 +8,7 @@ function VentaDepto() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        const coleccionDatos = collection(db, "publicaciones")
-        const filtro1 = where("tipo","==","venta")
-        const filtro2 = where("subtipo","==","departamento")
-        const consulta = query(coleccionDatos,filtro1,filtro2)
-        const pedido = getDocs(consulta)
+        const pedido = ref(db, "publicaciones/Venta/Departamento")
         pedido  
             .then((resultado) => {
                 setData(resultado.docs.map(doc=>({id : doc.id,...doc.data()})))
