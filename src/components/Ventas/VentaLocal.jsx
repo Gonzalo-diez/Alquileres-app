@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../db/Firebase";
 import { getDocs, collection, where, query } from "firebase/firestore";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function VentaLocal() {
     const [data, setData] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         const coleccionDatos = collection(db, "publicaciones")
@@ -26,7 +27,7 @@ function VentaLocal() {
             {data.map((elemento, indice) => {
                 const {imagen, titulo, id} = elemento;
                 return(
-                    <div key={indice} className="box-container">
+                    <div key={indice} className="box-container" onClick={() => navigate(`/Item/${id}`)}>
                         <div className="box">
                             <img src={imagen} alt={titulo} className="img-container" />
                             <div className="box-content">

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../db/Firebase";
 import { collection, getDocs } from "firebase/firestore";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function ItemListContainer() {
     const [items, setItem] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         const getData = async() => {
@@ -20,7 +21,7 @@ function ItemListContainer() {
             {items.map((item, indice) => {
                 const {imagen, titulo, id, tipo, subtipo} = item;
                 return(
-                    <div key={indice} className="box-container">
+                    <div key={indice} className="box-container" onClick={() => navigate(`/Item/${id}`)}>
                         <div className="box">
                             <img src={imagen} alt={titulo} className="img-container" />
                             <div className="box-content">
