@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../db/Firebase";
-import { ref } from "firebase/database";
-import { Link, useNavigate } from "react-router-dom";
+import { getDocs, collection, where, query } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 function AlquilerBodega() {
     const [data, setData] = useState([])
-    const navigate = useNavigate()
 
     useEffect(() => {
-        const pedido = ref(db, "publicaciones/Alquiler/Bodega")
+        const coleccionDatos = collection(db, "publicaciones")
+        const filtro1 = where("tipo","==","alquiler")
+        const filtro2 = where("subtipo","==","galpon/bodega") 
+        const consulta = query(coleccionDatos,filtro1,filtro2)
+        const pedido = getDocs(consulta)
         pedido  
             .then((resultado) => {
                 setData(resultado.docs.map(doc=>({id : doc.id,...doc.data()})))
@@ -23,7 +26,7 @@ function AlquilerBodega() {
             {data.map((elemento, indice) => {
                 const {imagen, titulo, id} = elemento;
                 return(
-                    <div key={indice} className="box-container" onClick={() => navigate(`/Item/${id}`)}>
+                    <div key={indice} className="box-container">
                         <div className="box">
                             <img src={imagen} alt={titulo} className="img-container" />
                             <div className="box-content">
