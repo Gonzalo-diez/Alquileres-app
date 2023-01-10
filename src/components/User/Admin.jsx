@@ -34,202 +34,62 @@ function Admin() {
         setMostrar(false);
     }
 
-    useEffect(() => {
-        function uploadFile() {
-            const name = new Date().getTime() + file.name;
-            console.log(name)
-            const storageRef = ref(storage, file.name);
-            const uploadTask = uploadBytesResumable(storageRef, file);
-
-            uploadTask.on(
-                "state_changed",
-                (snapshot) => {
-                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    toast.info('Upload is ' + progress + '% done', {
-                        position: toast.POSITION.TOP_CENTER
-                    });
-                    setPerc(progress);
-                    switch (snapshot.state) {
-                    case 'paused':
-                        console.log('Upload is paused');
+    function uploadFile(file, setData, setPerc) {
+        const name = new Date().getTime() + file.name;
+        console.log(name)
+        const storageRef = ref(storage, file.name);
+        const uploadTask = uploadBytesResumable(storageRef, file);
+      
+        uploadTask.on(
+            "state_changed",
+            (snapshot) => {
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                toast.info('Upload is ' + progress + '% done', {
+                    position: toast.POSITION.TOP_CENTER
+                });
+                setPerc(progress);
+                switch (snapshot.state) {
+                case 'paused':
+                    console.log('Upload is paused');
+                    break;
+                case 'running':
+                    console.log('Upload is running');
+                    break;
+                    default:
                         break;
-                    case 'running':
-                        console.log('Upload is running');
-                        break;
-                        default:
-                            break;
-                    }
-                },
-                (error) => {
-                    console.log(error);
-                },
-                () => {
-                    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                        setData((prev) => ({ ...prev, imagen: downloadURL }));
-                    })
                 }
-            )
-        }
-        file && uploadFile();
+            },
+            (error) => {
+                console.log(error);
+            },
+            () => {
+                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                    setData((prev) => ({ ...prev, imagen: downloadURL }));
+                })
+            }
+        )
+    }
+      
+    useEffect(() => {
+        file && uploadFile(file, setData, setPerc);
     }, [file]);
-
+      
     useEffect(() => {
-        function uploadFile1() {
-            const name = new Date().getTime() + file1.name;
-            console.log(name)
-            const storageRef = ref(storage, file1.name);
-            const uploadTask = uploadBytesResumable(storageRef, file1);
-
-            uploadTask.on(
-                "state_changed",
-                (snapshot) => {
-                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    toast.info('Upload is ' + progress + '% done', {
-                        position: toast.POSITION.TOP_CENTER
-                    });
-                    setPerc(progress);
-                    switch (snapshot.state) {
-                    case 'paused':
-                        console.log('Upload is paused');
-                        break;
-                    case 'running':
-                        console.log('Upload is running');
-                        break;
-                        default:
-                            break;
-                    }
-                },
-                (error) => {
-                    console.log(error);
-                },
-                () => {
-                    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                        setData((prev) => ({ ...prev, imagen1: downloadURL }));
-                    })
-                }
-            )
-        }
-        file1 && uploadFile1();
+        file1 && uploadFile(file1, setData, setPerc);
     }, [file1]);
-
+      
     useEffect(() => {
-        function uploadFile2() {
-            const name = new Date().getTime() + file2.name;
-            console.log(name)
-            const storageRef = ref(storage, file2.name);
-            const uploadTask = uploadBytesResumable(storageRef, file2);
-
-            uploadTask.on(
-                "state_changed",
-                (snapshot) => {
-                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    toast.info('Upload is ' + progress + '% done', {
-                        position: toast.POSITION.TOP_CENTER
-                    });
-                    setPerc(progress);
-                    switch (snapshot.state) {
-                    case 'paused':
-                        console.log('Upload is paused');
-                        break;
-                    case 'running':
-                        console.log('Upload is running');
-                        break;
-                        default:
-                            break;
-                    }
-                },
-                (error) => {
-                    console.log(error);
-                },
-                () => {
-                    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                        setData((prev) => ({ ...prev, imagen2: downloadURL }));
-                    })
-                }
-            )
-        }
-        file2 && uploadFile2();
+        file2 && uploadFile(file2, setData, setPerc);
     }, [file2]);
 
     useEffect(() => {
-        function uploadFile3() {
-            const name = new Date().getTime() + file3.name;
-            console.log(name)
-            const storageRef = ref(storage, file3.name);
-            const uploadTask = uploadBytesResumable(storageRef, file3);
-
-            uploadTask.on(
-                "state_changed",
-                (snapshot) => {
-                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    toast.info('Upload is ' + progress + '% done', {
-                        position: toast.POSITION.TOP_CENTER
-                    });
-                    setPerc(progress);
-                    switch (snapshot.state) {
-                    case 'paused':
-                        console.log('Upload is paused');
-                        break;
-                    case 'running':
-                        console.log('Upload is running');
-                        break;
-                        default:
-                            break;
-                    }
-                },
-                (error) => {
-                    console.log(error);
-                },
-                () => {
-                    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                        setData((prev) => ({ ...prev, imagen3: downloadURL }));
-                    })
-                }
-            )
-        }
-        file3 && uploadFile3();
+        file3 && uploadFile(file3, setData, setPerc);
     }, [file3]);
 
     useEffect(() => {
-        function uploadFile4() {
-            const name = new Date().getTime() + file4.name;
-            console.log(name)
-            const storageRef = ref(storage, file4.name);
-            const uploadTask = uploadBytesResumable(storageRef, file4);
-
-            uploadTask.on(
-                "state_changed",
-                (snapshot) => {
-                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    toast.info('Upload is ' + progress + '% done', {
-                        position: toast.POSITION.TOP_CENTER
-                    });
-                    setPerc(progress);
-                    switch (snapshot.state) {
-                    case 'paused':
-                        console.log('Upload is paused');
-                        break;
-                    case 'running':
-                        console.log('Upload is running');
-                        break;
-                        default:
-                            break;
-                    }
-                },
-                (error) => {
-                    console.log(error);
-                },
-                () => {
-                    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                        setData((prev) => ({ ...prev, imagen4: downloadURL }));
-                    })
-                }
-            )
-        }
-        file4 && uploadFile4();
+        file4 && uploadFile(file4, setData, setPerc);
     }, [file4]);
-
-
+      
     const handleInput = (e) => {
         const id = e.target.id;
         const value = e.target.value;
